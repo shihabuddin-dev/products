@@ -4,6 +4,7 @@ import Product from '../product/Product';
 
 const Products = ({ productsPromise }) => {
     const products = use(productsPromise)
+    // console.log(products)
 
     const [getProduct, setGetProduct] = useState([])
 
@@ -26,10 +27,12 @@ const Products = ({ productsPromise }) => {
             </div>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
                 {
-                    products.map(product => <Product
-                        key={product.id}
-                        handleGetProduct={handleGetProduct}
-                        product={product}></Product>)
+                    products.map(product =>
+                        <Product
+                            key={product.id}
+                            handleGetProduct={handleGetProduct}
+                            product={product}>
+                        </Product>)
                 }
             </div>
         </div>

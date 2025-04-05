@@ -3,9 +3,9 @@ import { useState } from "react";
 const Product = ({ product, handleGetProduct }) => {
     const { image, title, category, price, rating } = product
     const { rate, count } = rating
-    const [addCart, setAddCart] = useState(false)
+    const [addCart, setAddCart] = useState(true)
     const handleAddToCart = () => {
-        setAddCart(true)
+        setAddCart(false)
         handleGetProduct(product)
     }
     return (
@@ -19,7 +19,7 @@ const Product = ({ product, handleGetProduct }) => {
                 <button
                     className='px-2 md:px-4 py-1 md:py-2 bg-gray-200 rounded-lg font-semibold mt-2 md:mt-0'
                     onClick={handleAddToCart}
-                >{addCart ? 'Added 🛒' : 'Cart 🛒 '}</button>
+                >{addCart ? 'Cart 🛒 ' : 'Added 🛒'}</button>
                 
             </div>
         </div >
